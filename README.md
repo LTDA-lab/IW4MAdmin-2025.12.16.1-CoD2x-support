@@ -1,59 +1,57 @@
+# IW4MAdmin – Call of Duty 2x Compatibility
 
-# IW4MAdmin [![GitHub license](https://img.shields.io/github/license/RaidMax/IW4M-Admin)](https://github.com/RaidMax/IW4M-Admin/blob/2.4-pr/LICENSE) [![GitHub stars](https://img.shields.io/github/stars/RaidMax/IW4M-Admin)](https://github.com/RaidMax/IW4M-Admin/stargazers)  
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/J3J821KUJ)
+This is a modified version of **IW4MAdmin 2025.12.16.1** with support for **Call of Duty 2x (CoD2x)** dedicated servers.
 
-## About
-**IW4MAdmin** is an administration tool for [IW4x](https://iw4x.org/), [IW6x](https://xlabs.dev), [Pluto T6](https://forum.plutonium.pw/category/6/plutonium-t6), [Pluto IW5](https://forum.plutonium.pw/category/14/plutonium-iw5), [CoD4x](https://cod4x.me/), [TeknoMW3](https://github.com/Musta1337/TeknoMW3), and most Call of Duty® dedicated servers. It allows complete control of your server; from changing maps, to banning players, **IW4MAdmin** monitors and records activity on your server(s). With plugin support, extending its functionality is a breeze.
-### Download
-Latest binary builds are always available at:
-- [GitHub](https://github.com/RaidMax/IW4M-Admin/releases)
-- [RaidMax](https://raidmax.org/IW4MAdmin)  
+The modification adds CoD2x RCON and event parsing support, including proper handling of signed decimal player GUIDs and working Kick, Permanent Ban, and Temporary Ban commands.
 
+## Installation
 
-## Setup
-**IW4MAdmin** requires minimal effort to get up and running.
-### Prerequisites
-* [.NET 8.0.x ASP.NET Hosting Bundle ](https://www.microsoft.com/net/download)
-    * [Direct Download (Windows)](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-8.0.6-windows-hosting-bundle-installer)
-    * [Package Installation Instructions (Linux)](https://learn.microsoft.com/en-us/dotnet/core/install/linux?WT.mc_id=dotnet-35129-website)
-### Installation
-1. Install ASP.NET Core Runtime (Hosting Bundle)
-2.  Extract `IW4MAdmin-<version>.zip`  
-### Launching
-Windows
-1. Run `StartIW4MAdmin.cmd`
-2. Configure **IW4MAdmin**
+**Important:** This modified DLL is designed specifically for **IW4MAdmin version 2025.12.16.1**. It is not guaranteed to work with other IW4MAdmin versions.
 
-Linux
-1. Execute `chmod +x StartIW4MAdmin.sh`  
-2. Run `./StartIW4MAdmin.sh`
-3. Configure **IW4MAdmin**
+### 1. Replace the DLL
 
-### First Steps
-1. Go ingame and type via the **ingame chat** `!owner` to claim ownership (full admin permissions) of the server
-2. Login to the webfront by accessing http://<machine_ip_here>:1624 and clicking on the key icon
-    * You will need to retrieve your login credentials by typing `!rt` ingame
+1. Stop IW4MAdmin.
+2. Navigate to your IW4MAdmin installation directory.
+3. Open the `Lib` folder.
+4. Back up your original `IW4MAdmin.dll`.
+5. Replace it with the modified `IW4MAdmin.dll` provided in this repository.
 
-### Updating
-**Manually**  
-1. Download the latest version of **IW4MAdmin**
-2. Extract the newer version of **IW4MAdmin** into pre-existing **IW4MAdmin** folder and overwrite existing files
+The file to replace is:
 
-    _Your configuration and database will be saved_
+`IW4MAdmin/Lib/IW4MAdmin.dll`
 
-**OR**  
-Use the provided `UpdateIW4MAdmin` script to download and install automatically
+### 2. Configure your CoD2x server
 
-| Argument Windows (Linux) | Description                                               |
-|--------------------------|-----------------------------------------------------------|
-| -Silent (s)              | Do not prompt for any user input                          |
-| -Clean (c)               | Clean unneeded files listed in `_delete.txt` after update |
-| -Verified (v)            | Only update releases in the verified stream               |
- | -Directory (d)           | Directory to install to                                   |
+Open your server's `Configuration.json` file and set the following values:
 
-## Help
-Feel free to join the **IW4MAdmin** [Discord](https://discord.gg/ZZFK5p3)  
-If you come across an issue,  bug, or feature request please post an [issue](https://github.com/RaidMax/IW4M-Admin/issues)
+```json
+"RConParserVersion": "CoD2x",
+"EventParserVersion": "CoD2x"
+```
 
+Make sure both parser versions are set to `CoD2x`.
 
-#### Explore the [wiki](https://github.com/RaidMax/IW4M-Admin/wiki) to find more information.
+### 3. Restart IW4MAdmin
+
+Start IW4MAdmin again. Your CoD2x server should now be recognized using the custom parsers.
+
+## Supported Features
+
+- CoD2x RCON parsing.
+- CoD2x game event parsing.
+- Signed decimal player GUID support.
+- Player Kick.
+- Permanent Ban.
+- Temporary Ban.
+
+## Requirements
+
+- IW4MAdmin **2025.12.16.1**.
+- A working Call of Duty 2x dedicated server.
+- .NET 8 runtime.
+
+## Disclaimer
+
+This is a community modification of IW4MAdmin intended to provide compatibility with CoD2x dedicated servers. It is not an official IW4MAdmin release and is not affiliated with or endorsed by the IW4MAdmin or CoD2x developers.
+
+The modified DLL is provided for the specific IW4MAdmin version listed above.
