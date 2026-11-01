@@ -448,7 +448,7 @@ namespace Integrations.Cod
 
             if (headerSplit.Length == 2)
             {
-                return headerSplit.Last().Split(['\n'], StringSplitOptions.RemoveEmptyEntries)
+                return headerSplit.Last().Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries)
                     .Select(line => line.StartsWith("^7") ? line[2..] : line).ToArray();
             }
 

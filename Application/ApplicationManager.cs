@@ -109,8 +109,16 @@ namespace IW4MAdmin.Application
             ConfigHandler = appConfigHandler;
             StartTime = DateTime.UtcNow;
             PageList = new PageList();
-            AdditionalEventParsers = new List<IEventParser> { new BaseEventParser(parserRegexFactory, logger, appConfig, serviceProvider.GetRequiredService<IGameScriptEventFactory>()) };
-            AdditionalRConParsers = new List<IRConParser> { new BaseRConParser(serviceProvider.GetRequiredService<ILogger<BaseRConParser>>(), parserRegexFactory) };
+            AdditionalEventParsers = new List<IEventParser>
+            {
+                new BaseEventParser(parserRegexFactory, logger, appConfig, serviceProvider.GetRequiredService<IGameScriptEventFactory>()),
+                new CoD2xEventParser(parserRegexFactory, logger, appConfig, serviceProvider.GetRequiredService<IGameScriptEventFactory>())
+            };
+            AdditionalRConParsers = new List<IRConParser>
+            {
+                new BaseRConParser(serviceProvider.GetRequiredService<ILogger<BaseRConParser>>(), parserRegexFactory),
+                new CoD2xRConParser(serviceProvider.GetRequiredService<ILogger<BaseRConParser>>(), parserRegexFactory)
+            };
             TokenAuthenticator = new TokenAuthentication();
             _logger = logger;
             _isRunningTokenSource = new CancellationTokenSource();
