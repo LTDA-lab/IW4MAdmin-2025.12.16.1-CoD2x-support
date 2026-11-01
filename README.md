@@ -57,4 +57,5 @@ This is a community modification of IW4MAdmin intended to provide compatibility 
 The modified DLL is provided for the specific IW4MAdmin version listed above.
 
 
-<img width="666" height="423" alt="2026-10-31 18_38_26-Window" src="https://github.com/user-attachments/assets/955f80d1-8ea7-4a17-87d1-c4e673fb099a" />
+<img width="661" height="418" alt="2026-10-31 18_38_26-Window" src="https://github.com/user-attachments/assets/1d95e73d-e5d0-48a7-bf3d-695e98feb093" />
+
