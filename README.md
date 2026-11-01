@@ -55,3 +55,6 @@ Start IW4MAdmin again. Your CoD2x server should now be recognized using the cust
 This is a community modification of IW4MAdmin intended to provide compatibility with CoD2x dedicated servers. It is not an official IW4MAdmin release and is not affiliated with or endorsed by the IW4MAdmin or CoD2x developers.
 
 The modified DLL is provided for the specific IW4MAdmin version listed above.
+
+
+<img width="666" height="423" alt="2026-10-31 18_38_26-Window" src="https://github.com/user-attachments/assets/955f80d1-8ea7-4a17-87d1-c4e673fb099a" />
