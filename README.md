@@ -59,3 +59,13 @@ The modified DLL is provided for the specific IW4MAdmin version listed above.
 
 <img width="661" height="418" alt="2026-10-31 18_38_26-Window" src="https://github.com/user-attachments/assets/1d95e73d-e5d0-48a7-bf3d-695e98feb093" />
 
+
+
+
+<h2>CONNECT WITH ME</h2>
+
+<p><strong>Discord:</strong> <code>ghy54</code></p>
+
+<a href="https://discord.gg/8v3NRGepuv">
+  <img src="https://img.shields.io/badge/Discord-JOIN_MY_SERVER-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Join my Discord Server">
+</a>
